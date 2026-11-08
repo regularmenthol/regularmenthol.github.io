@@ -19,6 +19,17 @@ a{color:inherit;text-decoration:none}
 .card .view{opacity:0;transform:translateX(-8px);transition:opacity .25s,transform .25s}
 .card:hover .view,.card:focus-visible .view{opacity:1;transform:none}
 .card:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+.card[data-vimeo] .tile::after{content:"";position:absolute;right:16px;bottom:16px;width:48px;height:48px;border-radius:50%;pointer-events:none;background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z' fill='%230d0d0e'/%3E%3C/svg%3E") center/20px no-repeat}
+.card[data-vimeo] .view{display:none}
+.lb{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(5,5,6,.94)}
+.lb[hidden]{display:none}
+.lb__frame{width:min(1200px,100%);aspect-ratio:16/9}
+.lb__frame iframe{display:block;width:100%;height:100%;border:0;border-radius:6px;background:#000}
+.lb__close{position:absolute;top:16px;right:20px;width:48px;height:48px;border:1.5px solid #4a4a47;border-radius:50%;background:transparent;color:#f2f1ed;font:inherit;font-size:22px;line-height:1;cursor:pointer}
+.lb__close:hover{border-color:#f2f1ed}
+.lb__close:focus-visible{outline:2px solid #c6f135;outline-offset:3px}
+.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:700px){.work-grid{grid-template-columns:1fr}}
 .playring{animation:pulse 2.4s ease-out infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(198,241,53,.45)}100%{box-shadow:0 0 0 28px rgba(198,241,53,0)}}
 @media (prefers-reduced-motion:reduce){.playring{animation:none}}
@@ -44,55 +55,69 @@ a{color:inherit;text-decoration:none}
 
   <!-- REEL -->
   <section id="reel" style="max-width: 1280px; margin: 0 auto; padding: 0 32px 96px">
-    <div style="margin: 0 0 16px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #a8a7a1; font-weight: 700">Demo reel 2026</div>
     <iframe src="https://player.vimeo.com/video/286971532?dnt=1" title="Ryan Paterson demo reel 2026" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="display: block; width: 100%; aspect-ratio: 16 / 9; border: 1.5px solid #2c2c2f; border-radius: 6px; background: #151517"></iframe>
   </section>
 
   <!-- WORK -->
   <section id="work" style="max-width: 1280px; margin: 0 auto; padding: 0 32px 96px">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 48px 32px">
+    <div class="work-grid" style="display: grid; gap: 48px 32px">
 
-      <a class="card" href="#work" style="display: flex; flex-direction: column; gap: 16px">
+      <a class="card" href="https://vimeo.com/851380489" data-vimeo="851380489" data-title="Jose Cuervo Cristalino" style="display: flex; flex-direction: column; gap: 16px">
         <div class="tile" style="position: relative; aspect-ratio: 16 / 9; background: #151517; border: 1.5px solid #2c2c2f; border-radius: 6px; display: flex; align-items: center; justify-content: center">
-          <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #8d8c86; font-weight: 700">[Thumbnail 16:9]</span>
-          <span class="view" style="position: absolute; right: 20px; bottom: 16px; color: var(--accent); font-weight: 700; font-size: 15px">View project →</span>
+          <img src="images/cuervo-cristalino.jpg" alt="Jose Cuervo Cristalino bottle surrounded by flying ice" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 5px">
+          <span class="view" style="position: absolute; right: 20px; bottom: 16px; color: var(--accent); font-weight: 700; font-size: 15px">Play →</span>
         </div>
         <div style="display: flex; gap: 16px; align-items: baseline">
           <span style="font-family: 'Modenra', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 28px; color: var(--accent)">01</span>
           <div style="display: flex; flex-direction: column; gap: 4px">
-            <h3 style="margin: 0; font-size: 20px; font-weight: 700">[PROJECT TITLE]</h3>
-            <p style="margin: 0; color: #a8a7a1; font-size: 15px">[Client] · [Role] · [Tools]</p>
+            <h3 style="margin: 0; font-size: 20px; font-weight: 700">Jose Cuervo Cristalino</h3>
+            <p style="margin: 0; color: #a8a7a1; font-size: 15px">Lead 3D Artist · Houdini + Cinema 4D</p>
           </div>
         </div>
       </a>
 
-      <a class="card" href="#work" style="display: flex; flex-direction: column; gap: 16px">
+      <a class="card" href="https://vimeo.com/1208768466" data-vimeo="1208768466" data-title="Unknown: Killer Robots" style="display: flex; flex-direction: column; gap: 16px">
         <div class="tile" style="position: relative; aspect-ratio: 16 / 9; background: #151517; border: 1.5px solid #2c2c2f; border-radius: 6px; display: flex; align-items: center; justify-content: center">
-          <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #8d8c86; font-weight: 700">[Thumbnail 16:9]</span>
-          <span class="view" style="position: absolute; right: 20px; bottom: 16px; color: var(--accent); font-weight: 700; font-size: 15px">View project →</span>
+          <img src="images/unknown-killer-robots.jpg" alt="Unknown: Killer Robots title card with a glowing red lens" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 5px">
+          <span class="view" style="position: absolute; right: 20px; bottom: 16px; color: var(--accent); font-weight: 700; font-size: 15px">Play →</span>
         </div>
         <div style="display: flex; gap: 16px; align-items: baseline">
           <span style="font-family: 'Modenra', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 28px; color: var(--accent)">02</span>
           <div style="display: flex; flex-direction: column; gap: 4px">
-            <h3 style="margin: 0; font-size: 20px; font-weight: 700">[PROJECT TITLE]</h3>
-            <p style="margin: 0; color: #a8a7a1; font-size: 15px">[Client] · [Role] · [Tools]</p>
+            <h3 style="margin: 0; font-size: 20px; font-weight: 700">Unknown: Killer Robots</h3>
+            <p style="margin: 0; color: #a8a7a1; font-size: 15px">Story Syndicate · Lead Motion Designer · Houdini + After Effects</p>
           </div>
         </div>
       </a>
 
-      <a class="card" href="#work" style="display: flex; flex-direction: column; gap: 16px">
+      <a class="card" href="https://vimeo.com/851405518" data-vimeo="851405518" data-title="Maddenwood – Paloma" style="display: flex; flex-direction: column; gap: 16px">
         <div class="tile" style="position: relative; aspect-ratio: 16 / 9; background: #151517; border: 1.5px solid #2c2c2f; border-radius: 6px; display: flex; align-items: center; justify-content: center">
-          <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #8d8c86; font-weight: 700">[Thumbnail 16:9]</span>
-          <span class="view" style="position: absolute; right: 20px; bottom: 16px; color: var(--accent); font-weight: 700; font-size: 15px">View project →</span>
+          <img src="images/maddenwood-paloma.jpg" alt="Maddenwood: a woman in a plaid skirt standing in a garden of giant lips-shaped mushrooms with a fuzzy yellow chick" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 5px">
+          <span class="view" style="position: absolute; right: 20px; bottom: 16px; color: var(--accent); font-weight: 700; font-size: 15px">Play →</span>
         </div>
         <div style="display: flex; gap: 16px; align-items: baseline">
           <span style="font-family: 'Modenra', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 28px; color: var(--accent)">03</span>
           <div style="display: flex; flex-direction: column; gap: 4px">
-            <h3 style="margin: 0; font-size: 20px; font-weight: 700">[PROJECT TITLE]</h3>
-            <p style="margin: 0; color: #a8a7a1; font-size: 15px">[Client] · [Role] · [Tools]</p>
+            <h3 style="margin: 0; font-size: 20px; font-weight: 700">Maddenwood – Paloma</h3>
+            <p style="margin: 0; color: #a8a7a1; font-size: 15px">Mathematic · 3D Artist · Houdini + Cinema 4D</p>
           </div>
         </div>
       </a>
+
+      <a class="card" href="https://vimeo.com/311381856" data-vimeo="311381856" data-title="Brainchild Illustration" style="display: flex; flex-direction: column; gap: 16px">
+        <div class="tile" style="position: relative; aspect-ratio: 16 / 9; background: #151517; border: 1.5px solid #2c2c2f; border-radius: 6px; display: flex; align-items: center; justify-content: center">
+          <img src="images/brainchild-illustration.jpg" alt="Brainchild Illustration: 3D bar chart of colorful blocks with eyeballs and the words Social Media" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 5px">
+          <span class="view" style="position: absolute; right: 20px; bottom: 16px; color: var(--accent); font-weight: 700; font-size: 15px">Play →</span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: baseline">
+          <span style="font-family: 'Modenra', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 28px; color: var(--accent)">04</span>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <h3 style="margin: 0; font-size: 20px; font-weight: 700">Brainchild Illustration</h3>
+            <p style="margin: 0; color: #a8a7a1; font-size: 15px">Atomic Productions + Netflix · Lead Motion Designer · After Effects + Cinema 4D</p>
+          </div>
+        </div>
+      </a>
+
 
     </div>
   </section>
@@ -108,5 +133,38 @@ a{color:inherit;text-decoration:none}
   </footer>
 
 </div>
+<div id="lightbox" class="lb" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+  <button class="lb__close" type="button" aria-label="Close video">&times;</button>
+  <div class="lb__frame"></div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lightbox'),frame=lb.querySelector('.lb__frame'),close=lb.querySelector('.lb__close'),last=null;
+  function open(id,title,el){
+    last=el;
+    var f=document.createElement('iframe');
+    f.src='https://player.vimeo.com/video/'+id+'?autoplay=1&dnt=1';
+    f.title=title||'Video';
+    f.allow='autoplay; fullscreen; picture-in-picture';
+    f.allowFullscreen=true;
+    frame.appendChild(f);
+    lb.hidden=false;
+    document.body.style.overflow='hidden';
+    close.focus();
+  }
+  function shut(){
+    frame.innerHTML='';
+    lb.hidden=true;
+    document.body.style.overflow='';
+    if(last) last.focus();
+  }
+  document.querySelectorAll('[data-vimeo]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();open(a.getAttribute('data-vimeo'),a.getAttribute('data-title'),a);});
+  });
+  close.addEventListener('click',shut);
+  lb.addEventListener('click',function(e){if(e.target===lb) shut();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden) shut();});
+})();
+</script>
 </body>
 </html>
