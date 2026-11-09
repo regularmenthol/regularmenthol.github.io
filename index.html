@@ -12,6 +12,8 @@
 @font-face{font-family:'Modenra';src:url(fonts/Modenra-Regular.otf) format('opentype');font-weight:400;font-style:normal;font-display:swap}
 body{margin:0;background:#0d0d0e;font-family:'Space Mono',ui-monospace,monospace;color:#f2f1ed}
 a{color:inherit;text-decoration:none}
+.section-title{margin:0 0 40px;font-family:'Modenra','Arial Narrow',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(48px,8vw,96px);line-height:.9;letter-spacing:.01em;color:var(--accent)}
+section[id]{scroll-margin-top:56px}
 .nav-link{padding:12px 4px;color:#a8a7a1;transition:color .2s}
 .nav-link:hover{color:#f2f1ed}
 .card .tile{transition:border-color .25s,transform .35s}
@@ -41,16 +43,17 @@ a{color:inherit;text-decoration:none}
   <!-- NAV -->
   <header style="max-width: 1280px; margin: 0 auto; padding: 24px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 16px">
     <nav style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 15px; font-weight: 500">
-      <a class="nav-link" href="#reel">Reel</a>
       <a class="nav-link" href="#work">Work</a>
-      <a class="nav-link" href="#contact" style="color: var(--accent)">Contact</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#ai-usage">AI Usage</a>
+      <a class="nav-link" href="mailto:ry.paterson@gmail.com" style="color: var(--accent)">Contact</a>
     </nav>
   </header>
 
   <!-- NAME -->
   <section style="max-width: 1280px; margin: 0 auto; padding: 24px 32px 48px">
     <h1 style="margin: 0; font-family: 'Modenra', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(64px, 14vw, 220px); line-height: 0.9; letter-spacing: 0.01em">Ryan Paterson</h1>
-    <p style="margin: 4px 0 0; font-family: 'Space Mono', ui-monospace, monospace; font-weight: 400; font-size: clamp(14px, 1.6vw, 20px); letter-spacing: 0.16em; text-transform: uppercase; color: #c9c8c2">Motion designer in Brooklyn, NY</p>
+    <p style="margin: calc(-0.11 * clamp(64px, 14vw, 220px)) 0 0; font-family: 'Space Mono', ui-monospace, monospace; font-weight: 400; font-size: clamp(12px, 1.6vw, 20px); letter-spacing: 0.16em; text-transform: uppercase; color: #c9c8c2">Motion designer in Brooklyn, NY</p>
   </section>
 
   <!-- REEL -->
@@ -60,6 +63,7 @@ a{color:inherit;text-decoration:none}
 
   <!-- WORK -->
   <section id="work" style="max-width: 1280px; margin: 0 auto; padding: 0 32px 96px">
+    <h2 class="section-title">Work</h2>
     <div class="work-grid" style="display: grid; gap: 48px 32px">
 
       <a class="card" href="https://vimeo.com/851380489" data-vimeo="851380489" data-title="Jose Cuervo Cristalino" style="display: flex; flex-direction: column; gap: 16px">
@@ -122,13 +126,31 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
+  
+
+  <!-- ABOUT -->
+  <section id="about" style="max-width: 1280px; margin: 0 auto; padding: 0 32px 96px">
+    <h2 class="section-title">About</h2>
+    <div style="max-width: 760px; display: flex; flex-direction: column; gap: 20px">
+      <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #f2f1ed">[Two or three sentences about you: what you make, what you care about in motion, and the kind of projects you want more of.]</p>
+      <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #c9c8c2">[Optional: background, studios you have worked with, software you work in.]</p>
+    </div>
+  </section>
+
+  <!-- AI USAGE -->
+  <section id="ai-usage" style="max-width: 1280px; margin: 0 auto; padding: 0 32px 96px">
+    <h2 class="section-title">AI Usage</h2>
+    <div style="max-width: 760px; display: flex; flex-direction: column; gap: 20px">
+      <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #f2f1ed">[A short statement on if, where and how you use AI tools in your work.]</p>
+    </div>
+  </section>
+
   <!-- CONTACT / FOOTER -->
-  <footer id="contact" style="max-width: 1280px; margin: 0 auto; padding: 32px 32px 48px; border-top: 1.5px solid #2c2c2f; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 15px">
-    <a href="mailto:[YOUR EMAIL]" style="color: var(--accent); font-weight: 700; padding: 12px 0">[YOUR EMAIL]</a>
-    <div style="display: flex; flex-wrap: wrap; gap: 24px; color: #a8a7a1">
-      <a class="nav-link" href="#">Vimeo</a>
-      <a class="nav-link" href="#">Instagram</a>
-      <a class="nav-link" href="#">LinkedIn</a>
+  <footer id="contact" style="max-width: 1280px; margin: 0 auto; padding: 0 32px 48px">
+    <div style="border-top: 1.5px solid #2c2c2f; padding-top: 48px">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 15px">
+    <a href="mailto:ry.paterson@gmail.com" style="color: var(--accent); font-weight: 700; padding: 12px 0">ry.paterson@gmail.com</a>
+  </div>
     </div>
   </footer>
 
